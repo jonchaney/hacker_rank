@@ -9,20 +9,26 @@
 
 // Write a program that prints a staircase of size .
 
-function staircase(n) {
-  // create array with n-1 whitespace and a # at the end
-  let arr = [];
-  for(let i = 0; i < n-1; i++) {
-    arr.push(" ");
-  }
-  arr.push("#");
+// function staircase(n) {
+//   // create array with n-1 whitespace and a # at the end
+//   let arr = [];
+//   for(let i = 0; i < n-1; i++) {
+//     arr.push(" ");
+//   }
+//   arr.push("#");
 
-  // print staircase
-  console.log(arr.join(''));
-  for(let i = n-2; i >= 0; i--) {
-      arr[i] = "#";
-      console.log(arr.join(''));
+//   // print staircase
+//   console.log(arr.join(''));
+//   for(let i = n-2; i >= 0; i--) {
+//       arr[i] = "#";
+//       console.log(arr.join(''));
+//   }
+// }
+
+function staircase(n) {
+  for (var i = 1; i <= n; i++) {
+    console.log(' '.repeat(n - i) + '#'.repeat(i));
   }
 }
 
-staircase(10);
+staircase(5);
