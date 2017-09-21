@@ -33,8 +33,6 @@
 
 function staircase(n) {
   for (let i = 0; i < n; i++) {
-    // note: join() requires a minimum 
-    //   of 2 array elements to have any effect
     let spaces = new Array(n - i).join(" ");
     let hashes = new Array(2 + i).join("#");
     console.log(spaces + hashes);
