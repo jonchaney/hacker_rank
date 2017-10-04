@@ -4,25 +4,44 @@
 
 a = ARGV
 
-lucky_numbers(a[0],a[1])
 
 def lucky_numbers(a, b)
-  
-  sum = (a..b).to_a.reduce(:+)
-  square_sum = (1..3).to_a.map do |el|
-    el * el
-  end.reduce(:+)
+  nums = (a..b).to_a
+  count = 0
+  sum = 0
+  square_sum = 0
 
- 
+  
+  nums.each do |num|
+    p num
+    if num.length > 1
+      num.chars.each do |el|
+          sum += el.to_i
+          square_sum += (el.to_i ** 2)
+      end 
+      if is_prime?(sum) && is_prime?(square_sum) 
+        count+=1
+      end 
+      sum = 0
+      square_sum = 0
+    end
+
+  end 
+  p count
 end 
 
 def is_prime?(num)
-  (2...num).each do |el|
+    (2...num).each do |el|
     if num % el == 0
       return false
     end 
   end
   true
 end
-  
-  
+
+lucky_numbers(a[0],a[1])
+
+# sum = (a..b).to_a.reduce(:+)
+# square_sum = (1..3).to_a.map do |el|
+#   el * el
+# end.reduce(:+)
