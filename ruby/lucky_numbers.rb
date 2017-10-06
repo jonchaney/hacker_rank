@@ -19,6 +19,7 @@ def lucky_numbers(a, b)
           sum += el.to_i
           square_sum += (el.to_i ** 2)
       end 
+      
       if is_prime?(sum) && is_prime?(square_sum) 
         count+=1
       end 
